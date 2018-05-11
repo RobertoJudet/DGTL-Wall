@@ -1,0 +1,30 @@
+{
+  "name": "dgtl-wall",
+  "version": "0.0.1",
+  "description": "social platform for connecting people in the same physical location",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertoJudet/DGTL-Wall.git"
+  },
+  "keywords": [
+    "wall",
+    "bar",
+    "hackathon",
+    "social"
+  ],
+  "author": "dgtl-wall-team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertoJudet/DGTL-Wall/issues"
+  },
+  "homepage": "https://github.com/RobertoJudet/DGTL-Wall#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0"
+  }
+}
