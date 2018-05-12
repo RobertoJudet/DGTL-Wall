@@ -5,6 +5,7 @@ import imageUploadIco from '../assets/image-upload-logo.ico';
 import drawIco from '../assets/draw-logo.svg';
 import youtubeIco from '../assets/youtube-logo.svg';
 import DrawComponent from './inputDialogs/draw-dialog/DrawComponent';
+import ImageComponent from './inputDialogs/image-dialog/ImageComponent';
 
 const PickDialog = props => {
   const { stimuliSelectEvent } = props;
@@ -23,7 +24,7 @@ const PickDialog = props => {
   );
 };
 
-const ImageDialog = () => <div>ImageDialog</div>;
+const ImageDialog = () => <ImageComponent />;
 const DrawDialog = () => <DrawComponent />;
 const YouTubeDialog = () => <div>youtube</div>;
 
