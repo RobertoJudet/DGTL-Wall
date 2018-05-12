@@ -1,6 +1,8 @@
 import React from 'react';
 import SimpleInput from 'react-simple-input';
 import getYouTubeID from 'get-youtube-id';
+import './youTubeComponent.css';
+
 export default class YouTubeComponent extends React.Component {
   handleSubmit = state => {
     debugger;
@@ -11,6 +13,11 @@ export default class YouTubeComponent extends React.Component {
   };
 
   render() {
-    return <SimpleInput changeTimeout={500} onChange={this.handleSubmit} />;
+    return (
+      <div className="youtube-container">
+        <span>Paste your youtube link here:</span>
+        <SimpleInput changeTimeout={500} onChange={this.handleSubmit} />
+      </div>
+    );
   }
 }
