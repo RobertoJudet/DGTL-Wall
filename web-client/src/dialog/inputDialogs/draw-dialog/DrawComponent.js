@@ -3,7 +3,6 @@ import React from 'react';
 import CanvasDraw from 'react-canvas-draw';
 import { TwitterPicker } from 'react-color';
 import './drawComponent.css';
-import FancyButton from 'react-fancy-button';
 
 export default class DrawComponent extends React.Component {
   constructor() {
@@ -14,10 +13,12 @@ export default class DrawComponent extends React.Component {
     width: 400,
     height: 400
   };
-  save() {
+  save = () => {
+    debugger;
     //this.setState({ isSavingNote: true });
-    console.log('saving!');
-  }
+    //TODO : 
+    console.log(this.refs.canvas.canvas.toDataURL('image/png'));
+  };
 
   handleChangeComplete = color => {
     this.setState({ color: color.hex });
@@ -30,15 +31,19 @@ export default class DrawComponent extends React.Component {
           brushColor={this.state.color}
           canvasWidth={this.state.width}
           canvasHeight={this.state.height}
+          ref="canvas"
         />
         <div className="save-bar">
           <TwitterPicker
             color={'#D9E3F0'}
             onChangeComplete={this.handleChangeComplete}
           />
-          <FancyButton
+          <button
             classes="btn btn--small btn-primary btn--full"
-            onClick={this.save}
+            onClick={() => {
+              this.save();
+              console.log(this);
+            }}
             disabled={false}
             trigger={this.state.isSavingNote}
             // onDisabledClick={() => this.setState({ showErrors: true })}
