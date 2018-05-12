@@ -1,36 +1,16 @@
 import React from 'react';
-import Form from 'react-input';
+import SimpleInput from 'react-simple-input';
+import getYouTubeID from 'get-youtube-id';
 export default class YouTubeComponent extends React.Component {
   handleSubmit = state => {
-    var getYouTubeID = require('get-youtube-id');
-
-    var id = getYouTubeID(state.youtube);
+    debugger;
+    var id = getYouTubeID(state.nativeEvent.data);
     if (id !== null) {
       console.log(id); // "9bZkp7q19f0"
     }
   };
 
   render() {
-    return (
-      <Form
-        fields={[
-          {
-            name: '',
-            key: 'youtube',
-            type: 'link',
-            error: false,
-            required: false,
-            placeholder: 'Enter youtube link',
-            onChange: value => {
-              // handle a changed value on the input
-            },
-            renderAfter: () => <div />,
-            renderBefore: () => <div>Drop your Youtube LInk</div>
-          }
-          // additional inputs to include in the form
-        ]}
-        onChange={this.handleSubmit}
-      />
-    );
+    return <SimpleInput changeTimeout={500} onChange={this.handleSubmit} />;
   }
 }
