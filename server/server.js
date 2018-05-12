@@ -1,10 +1,11 @@
 var express = require('express'),
 	app = express(),
-	port = process.env.PORT || 3000,
+	port = process.env.PORT || 3069,
 	mongoose = require('mongoose'),
 	WallPost = require('./api/models/WallModel'),
 	bodyParser = require('body-parser'),
-	helmet = require('helmet');
+	helmet = require('helmet')
+	cors = require('cors');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/WallDB');
@@ -12,6 +13,7 @@ mongoose.connect('mongodb://localhost/WallDB');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(helmet());
+app.use(cors());
 
 var routes = require('./api/routes/WallRoutes');
 routes(app);
