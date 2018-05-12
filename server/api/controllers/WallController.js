@@ -11,6 +11,11 @@ exports.get_papirs = function (req, res) {
 	});
 };
 
+exports.get_papir_key_info = function (req, res) {
+	//TO DO: check if the key is allowed, return bool
+	res.json(req.params.papirKey);
+};
+
 exports.create_papir = function (req, res) {
 	var new_post = new WallPost(req.body);
 	new_post.save(function (err, papir) {

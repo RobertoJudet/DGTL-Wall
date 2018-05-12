@@ -4,7 +4,9 @@ module.exports = function (app) {
 	
 	app.route('/papirs')
 		.get(wall.get_papirs)
-		.post(wall.create_papir)
-		.delete(wall.delete_papir);
+		.post(wall.create_papir);
+		// .delete(wall.delete_papir);
 	
+	app.route('/papirs/:papirKey')
+		.get(wall.get_papir_key_info);
 };
