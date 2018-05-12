@@ -2,7 +2,7 @@ import React from 'react';
 import ImagesUploader from 'react-images-uploader';
 import './imageComponentFonts.css';
 import './imageComponentStyles.css';
-const serverUrl = 'http://localhost:1234/image/{token}';
+const serverUrl = 'http://localhost:3069/papirs';
 export default class ImageComponent extends React.Component {
   render() {
     return (
