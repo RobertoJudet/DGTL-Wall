@@ -26,7 +26,10 @@ var WallPostSchema = new Schema({
 });
 
 var AllowedKeysSchema = new Schema({
-	list: [{type: String}]
+	name: {
+		type: String,
+		required: true
+	}
 });
 
 module.exports = mongoose.model('WallPosts', WallPostSchema);
