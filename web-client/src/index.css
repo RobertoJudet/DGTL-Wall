@@ -43,6 +43,12 @@ html {
   height: 100%;
 }
 
+#root.dialog-open {
+  overflow:hidden;
+  width: 100vw!important;
+  height: 100vh!important;
+}
+
 .canvas {
   margin: auto;
   position: relative;

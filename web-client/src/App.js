@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import DialogComponent from './dialog/DialogComponent';
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -29,13 +29,15 @@ class App extends React.Component {
   render() {
     const { data, settings } = this.props;
 
-    const canvasStyle = {
-      width: settings.canvasWidth,
-      height: settings.canvasHeight
-    };
+    if (this.state.isDialogOpen){
+      document.getElementById("root").classList.add("dialog-open");
+    }
+    else{
+      document.getElementById("root").classList.remove("dialog-open");
+    }
 
     return (
-      <div className="canvas" style={canvasStyle}>
+      <div className="canvas">
         {this.fillCanvasWithJunk()}
 
         {/* Remove button when click event on body is in place */}
