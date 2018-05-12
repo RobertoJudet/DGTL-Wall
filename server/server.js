@@ -3,14 +3,15 @@ var express = require('express'),
 	port = process.env.PORT || 3000,
 	mongoose = require('mongoose'),
 	WallPost = require('./api/models/WallModel'),
-	bodyParser = require('body-parser');
+	bodyParser = require('body-parser'),
+	helmet = require('helmet');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/WallDB');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
+app.use(helmet());
 
 var routes = require('./api/routes/WallRoutes');
 routes(app);

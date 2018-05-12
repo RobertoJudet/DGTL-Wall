@@ -19,6 +19,7 @@ a {
   position: fixed;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%)!important;
   outline: 0 none;
   padding: 0 !important;
   z-index: 101;
@@ -169,5 +170,5 @@ a {
 }
 
 .stimuli-option img {
-  max-width: 50px;
+  width: 50%;
 }
