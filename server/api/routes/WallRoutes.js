@@ -8,5 +8,8 @@ module.exports = function (app) {
 		// .delete(wall.delete_papir);
 	
 	app.route('/papirs/:papirKey')
-		.get(wall.get_papir_key_info);
+		.get(wall.get_permissions);
+	
+	// app.route('/keys')
+	// 	.post(wall.add_keys);
 };

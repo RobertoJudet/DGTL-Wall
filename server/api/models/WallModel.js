@@ -26,4 +26,9 @@ var WallPostSchema = new Schema({
 	}
 });
 
+var AllowedKeysSchema = new Schema({
+	list: [{type: String}]
+});
+
 module.exports = mongoose.model('WallPosts', WallPostSchema);
+module.exports = mongoose.model('AllowedKeys', AllowedKeysSchema);
