@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.3.2",
+    "react-dialog": "^1.0.2",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
