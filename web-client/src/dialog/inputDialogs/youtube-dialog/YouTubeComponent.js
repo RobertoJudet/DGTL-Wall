@@ -4,11 +4,10 @@ import getYouTubeID from 'get-youtube-id';
 import './youTubeComponent.css';
 
 export default class YouTubeComponent extends React.Component {
-  handleSubmit = state => {
-    debugger;
-    var youtubeId = getYouTubeID(state.nativeEvent.data);
-    if (youtubeId !== null) {
-      console.log(youtubeId);
+  handleSubmit = event => {
+    var id = getYouTubeID(event.target.value);
+    if (id !== null) {
+      this.props.setPayload(id);
     }
   };
 
