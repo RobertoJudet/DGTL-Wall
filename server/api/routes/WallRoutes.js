@@ -7,9 +7,10 @@ module.exports = function (app) {
 		.post(wall.create_papir);
 		// .delete(wall.delete_papir);
 	
-	app.route('/papirs/:papirKey')
+	app.route('/papirs/:accessKey')
 		.get(wall.get_permissions);
 	
 	// app.route('/keys')
 	// 	.post(wall.add_keys);
 };
+
