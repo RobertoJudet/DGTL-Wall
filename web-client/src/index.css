@@ -22,18 +22,47 @@ html {
   left: calc(50% - 4em);
   width: 6em;
   height: 6em;
-  border: 1.1em solid rgba(0, 0, 0, 0.2);
-  border-left: 1.1em solid #000000;
+  border: 1.1em solid rgba(0, 102, 153, 0.2);
+  border-left: 1.1em solid #006699;
   border-radius: 50%;
-  animation: load8 1.1s infinite linear;
+  animation: load8 2s infinite linear;
+}
+
+#root:empty:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 70px;
+  top: 150px;
+  background-image: url(/images/logo-web.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: cancelLoad 2s infinite linear;
 }
 
 @keyframes load8 {
   0% {
     transform: rotate(0deg);
   }
+  50% {
+    transform: rotate(180deg);
+  }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes cancelLoad {
+  0% {
+    transform: rotate(-0deg);
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
 

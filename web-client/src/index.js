@@ -40,6 +40,6 @@ const settings = {
 //replace this with real server call
 window.setTimeout(function(){
     runApp(data, settings)
-}, 100)
+}, 1000)
 
 
