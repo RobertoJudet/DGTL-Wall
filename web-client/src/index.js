@@ -39,8 +39,8 @@ const data = [{
 }];
 
 const settings = {
-    canvasWidth: 2100,
-    canvasHeight: 2000
+    canvasWidth: 10100,
+    canvasHeight: 10000
 }
 
 //replace this with real server call
