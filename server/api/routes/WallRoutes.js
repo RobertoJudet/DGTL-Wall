@@ -1,10 +1,12 @@
 'use strict';
-module.exports = function(app) {
+module.exports = function (app) {
 	var wall = require('../controllers/WallController');
 	
-	// app.route('/:uuid:x:y:type:content')
-	// 	.post(wall.post_story);
+	app.route('/papirs')
+		.get(wall.get_papirs)
+		.post(wall.create_papir);
+		// .delete(wall.delete_papir);
 	
-	app.route('/')
-		.get(wall.get_posts)
+	app.route('/papirs/:papirKey')
+		.get(wall.get_papir_key_info);
 };

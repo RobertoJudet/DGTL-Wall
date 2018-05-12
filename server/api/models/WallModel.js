@@ -4,10 +4,6 @@ var Schema = mongoose.Schema;
 
 
 var WallPostSchema = new Schema({
-	uuid: {
-		type: String,
-		required: true,
-	},
 	type: {
 		type: String,
 		required: true
