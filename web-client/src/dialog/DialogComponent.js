@@ -37,9 +37,8 @@ export default class DialogComponent extends React.Component {
   }
 
   getDialogSize = () => {
-
-    let height = window.innerHeight / 2;
-    let width = window.innerWidth / 2;
+    let height = window.innerHeight / 1.3;
+    let width = window.innerWidth / 1.3;
 
     if (window.innerWidth < 700) {
       width = window.innerWidth;
