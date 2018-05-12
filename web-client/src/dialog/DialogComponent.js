@@ -37,7 +37,6 @@ export default class DialogComponent extends React.Component {
   }
 
   getDialogSize = () => {
-    const browserZoomLevel = Math.round(window.devicePixelRatio * 100);
 
     let height = window.innerHeight / 2;
     let width = window.innerWidth / 2;

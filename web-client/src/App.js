@@ -38,7 +38,8 @@ class App extends Component {
 
     return (
       <div className="canvas">
-        {this.fillCanvasWithJunk()}
+        {/* {this.fillCanvasWithJunk()} */}
+        
 
         {/* Remove button when click event on body is in place */}
         <button
