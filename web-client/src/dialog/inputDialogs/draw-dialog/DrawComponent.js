@@ -20,34 +20,21 @@ export default class DrawComponent extends React.Component {
 
   handleChange = () => {
     this.props.setPayload(this.refs.canvas.canvas.toDataURL('image/png'));
-  }
+  };
 
   render() {
     return (
-      <div className="draw-container" onMouseUp = {this.handleChange}>
+      <div className="draw-container" onMouseUp={this.handleChange}>
         <CanvasDraw
           brushColor={this.state.color}
           canvasWidth={this.state.width}
           canvasHeight={this.state.height}
           ref="canvas"
         />
-        <div className="save-bar">
-          <TwitterPicker
-            color={'#D9E3F0'}
-            onChangeComplete={this.handleChangeComplete}
-          />
-          <button
-            classes="btn btn--small btn-primary btn--full"
-            onClick={() => {
-              this.save();
-              console.log(this);
-            }}
-            disabled={false}
-            trigger={this.state.isSavingNote}
-            // onDisabledClick={() => this.setState({ showErrors: true })}
-            label="Save"
-          />
-        </div>
+        <TwitterPicker
+          color={'#D9E3F0'}
+          onChangeComplete={this.handleChangeComplete}
+        />
       </div>
     );
   }

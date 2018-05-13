@@ -23,11 +23,11 @@ export default class SaveComponent extends React.Component {
         console.log(response);
         this.setState({
           done: "success",
-          message: "Success! Page will refresh in 5 seconds..."
+          message: "Success! Page will refresh in 2 seconds..."
         }, () => {
           window.setTimeout(() => {
             window.location.reload();
-          }, 5000); // TODO reload with coordonates
+          }, 2000); // TODO reload with coordonates
         });
       },
       fail => {
