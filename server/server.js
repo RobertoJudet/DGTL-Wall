@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(helmet());
 app.use(cors());
+app.use(express.static("build"));
 
 var routes = require('./api/routes/WallRoutes');
 routes(app);

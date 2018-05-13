@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const postUrl = 'http://localhost:2000/papirs';
-const getUrl = 'http://localhost:2000/papirs';
+const postUrl = '/papirs';
+const getUrl = '/papirs';
 export default class HttpService {
 
   handleGetResponse(response) {
