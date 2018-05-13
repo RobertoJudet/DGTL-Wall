@@ -13,20 +13,18 @@ export default class DrawComponent extends React.Component {
     width: 400,
     height: 400
   };
-  save = () => {
-    debugger;
-    //this.setState({ isSavingNote: true });
-    //TODO : 
-    console.log(this.refs.canvas.canvas.toDataURL('image/png'));
-  };
 
   handleChangeComplete = color => {
     this.setState({ color: color.hex });
   };
 
+  handleChange = () => {
+    this.props.setPayload(this.refs.canvas.canvas.toDataURL('image/png'));
+  }
+
   render() {
     return (
-      <div className="draw-container">
+      <div className="draw-container" onMouseUp = {this.handleChange}>
         <CanvasDraw
           brushColor={this.state.color}
           canvasWidth={this.state.width}

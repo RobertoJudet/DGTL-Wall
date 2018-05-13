@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const postUrl = '';
 const getUrl = '';
-class HttpService {
+export default class HttpService {
   static get(queryParam, options) {
     return axios
       .get(getUrl + queryParam, options)
