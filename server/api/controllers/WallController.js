@@ -16,30 +16,31 @@ exports.get_papirs = function (req, res) {
 
 exports.get_permissions = function (req, res) {
 	var accessKey = req.params.accessKey;
-	AllowedKeys.find({name: accessKey}, function (err, record) {
+	AllowedKeys.find({ name: accessKey }, function (err, record) {
 		if (err)
-			res.json({'allowedToPost' : false});
-		
+			res.json({ 'allowedToPost': false });
+
 		if (_.isEmpty(record)) {
-			res.json({'allowedToPost' : false});
+			res.json({ 'allowedToPost': false });
 		} else {
-			res.json({'allowedToPost' : true});
+			res.json({ 'allowedToPost': true });
 		}
 	});
 };
 
 exports.create_papir = function (req, res) {
-	var accessKey = req.body.key;
-	if(!accessKey) {
-		res.json({message: 'Where is the key, dude?'});
+
+	var accessKey = req.body.data.key;
+	if (!accessKey) {
+		res.json({ message: 'Where is the key, dude?' });
 		return;
 	}
-	var new_papir = new WallPost(req.body);
+	var new_papir = new WallPost(req.body.data);
 	new_papir.save(function (err, papir) {
 		if (err)
 			res.send(err);
 		removeKey(accessKey);
-		res.json({message: 'Papir successfully added'});
+		res.json({ message: 'Papir successfully added' });
 	});
 };
 
@@ -49,7 +50,7 @@ exports.delete_papir = function (req, res) {
 	}, function (err, papir) {
 		if (err)
 			res.send(err);
-		res.json({message: 'Papir successfully deleted'});
+		res.json({ message: 'Papir successfully deleted' });
 	});
 };
 
@@ -58,12 +59,12 @@ exports.add_keys = function (req, res) {
 	new_key.save(function (err, list) {
 		if (err)
 			res.send(err);
-		res.json({message: 'Key successfully added'});
+		res.json({ message: 'Key successfully added' });
 	});
 };
 
 var removeKey = function (accessKey) {
-	AllowedKeys.remove({name: accessKey}, function(err, task) {
-	
+	AllowedKeys.remove({ name: accessKey }, function (err, task) {
+
 	});
 };

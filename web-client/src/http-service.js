@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const postUrl = '';
+const postUrl = 'http://localhost:2000/papirs';
 const getUrl = '';
 export default class HttpService {
   static get(queryParam, options) {
@@ -14,9 +14,21 @@ export default class HttpService {
   }
 
   static post(request) {
-    axios
+    return axios
       .post(postUrl, request)
       .then(response => this.handlePostResponse(response));
+
+      axios({
+        method: 'post',
+        url: postUrl,
+        data: request
+      })
+      .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+      });
   }
   handlePostResponse(response) {
     return response;

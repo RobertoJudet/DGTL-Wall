@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import HttpService from './../../../http-service';
 import './image-dialog.css';
 
 export default class ImageComponent extends React.Component {
