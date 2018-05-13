@@ -1,22 +1,36 @@
 import axios from 'axios';
 
-const postUrl = '';
-const getUrl = '';
+const postUrl = 'http://localhost:2000/papirs';
+const getUrl = 'http://localhost:2000/papirs';
 export default class HttpService {
-  static get(queryParam, options) {
-    return axios
-      .get(getUrl + queryParam, options)
-      .then(response => this.handleGetResponse(response));
-  }
 
   handleGetResponse(response) {
     return response;
   }
+  static get(queryParam, options) {
+    return axios
+      .get(getUrl, options)
+      .then(response => { return response; });
+  }
+
+
 
   static post(request) {
-    axios
+    return axios
       .post(postUrl, request)
-      .then(response => this.handlePostResponse(response));
+      .then(response => response);
+
+    // axios({
+    //   method: 'post',
+    //   url: postUrl,
+    //   data: request
+    // })
+    // .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    // });
   }
   handlePostResponse(response) {
     return response;

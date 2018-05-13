@@ -9,8 +9,9 @@ body {
 html {
   overflow: scroll;
   -ms-overflow-style: none;
-  
+
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -35,32 +36,34 @@ html {
   width: 200px;
   height: 70px;
   top: 150px;
-  background-image: url(/images/logo-web.png);
+  background-image: url("/images/logo-web.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   animation: cancelLoad 2s infinite linear;
 }
-
 @keyframes load8 {
   0% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(180deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
-
 @keyframes cancelLoad {
   0% {
     transform: rotate(-0deg);
   }
+
   50% {
     transform: rotate(-180deg);
   }
+
   100% {
     transform: rotate(-360deg);
   }
@@ -76,12 +79,12 @@ html {
 div#root:before {
   content: " ";
   display: block;
-  background: url(/images/logo-web.png);
+  background: url("/images/logo-web.png");
   background-size: 50px;
   width: 100%;
   height: 100%;
   opacity: 1;
-  background-image: url(/images/logo-rotated.png);
+  background-image: url("/images/logo-rotated.png");
   background-size: 100px;
   z-index: 1;
   position: absolute;
@@ -94,7 +97,7 @@ div#root:before {
   height: 100%;
   position: absolute;
   top: 0;
-  opacity: 0.5;
+  opacity: .5;
   background: rgba(255,255,255,1);
   background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(223,223,223,1) 46%, rgba(237,237,237,1) 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(46%, rgba(223,223,223,1)), color-stop(100%, rgba(237,237,237,1)));
@@ -102,19 +105,21 @@ div#root:before {
   background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(223,223,223,1) 46%, rgba(237,237,237,1) 100%);
   background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(223,223,223,1) 46%, rgba(237,237,237,1) 100%);
   background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(223,223,223,1) 46%, rgba(237,237,237,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#ffffff', endColorstr='#ededed', GradientType=1 );
 }
 
 #root.dialog-open {
-  overflow:hidden;
+  overflow: hidden;
   width: 100vw!important;
   height: 100vh!important;
 }
 
-.canvas {
+.dgtl-wall {
   margin: auto;
   position: relative;
   z-index: 10;
+  width: 100%;
+  height: 100%;
 }
 
 .junk {
@@ -124,6 +129,27 @@ div#root:before {
   height: 100px;
 }
 
-.junk:nth-child(2n+1){
+.junk:nth-child(2n+1) {
   background-color: blue;
+}
+
+/* POSTS */
+
+.postWrap {
+  position:absolute;
+  z-index: 50;
+}
+
+.postWrap img {
+  max-width: 300px;
+}
+
+.success {
+  font-size: 20px;
+  color: #4bb543;
+}
+
+.fail {
+  font-size: 20px;
+  color: #ff9494;
 }

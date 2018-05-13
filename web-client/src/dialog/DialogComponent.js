@@ -82,7 +82,7 @@ export default class DialogComponent extends React.Component {
                 currentDialogView = <YouTubeComponent setPayload={this.setPayload}/>;
                 break;
             case 4:
-                currentDialogView = <SaveComponent type={this.state.selectedType} payload={this.state.payload}/> //@Dejan add props (type and payload)
+                currentDialogView = <SaveComponent type={this.state.selectedType} payload={this.state.payload} coordonates={this.props.coordonates}/>
                 break;
             default:
                 currentDialogView = (

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import HttpService from './http-service'
 
 function runApp(data, settings){
     const root = document.getElementById('root');
@@ -28,18 +29,26 @@ function computeMiddleOfCanvas(settings) {
     }
 }
 
-const data = [{
-    
-}];
-
 const settings = {
     canvasWidth: 2100,
     canvasHeight: 2000
 }
 
-//replace this with real server call
-window.setTimeout(function(){
-    runApp(data, settings)
-}, 1000)
+HttpService.get().then(
+    response => {
+      let data = response.data.map((item) => {
+        return {
+            x: item.x,
+            y: item.y,
+            content: item.content,
+            type: item.type
+        }
+      });
+
+      console.log("posts: ", data);
+
+      runApp(data, settings);
+    }
+  );
 
 
