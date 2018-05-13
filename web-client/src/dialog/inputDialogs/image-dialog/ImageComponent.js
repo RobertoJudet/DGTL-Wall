@@ -29,7 +29,6 @@ export default class ImageComponent extends React.Component {
         this.props.setPayload(this.state.file);
       });
     });
-
   }
 
   handleUpload = () => {
@@ -39,15 +38,15 @@ export default class ImageComponent extends React.Component {
 
   render() {
     return (
-        <div>
-          <div className="logoContainer">
-            <img src={this.state.file} alt="insert pic here" />
-          </div>
-            <div className="fileContainer sprite">
-              <span>Choose Image </span>
-              <input type="file" onChange={this.handleChange} />
-            </div>
+      <div>
+        <div className="logoContainer">
+          <img src={this.state.file} alt="insert pic here" />
         </div>
-          );
-        }
-      }
+        <div className="fileContainer sprite">
+          <span>Choose Image </span>
+          <input type="file" onChange={this.handleChange} />
+        </div>
+      </div>
+    );
+  }
+}

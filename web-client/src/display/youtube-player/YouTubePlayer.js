@@ -1,19 +1,26 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 
-class YouTubePlayer extends React.Component {
+export default class YouTubePlayer extends React.Component {
   render() {
     const opts = {
-      height: '390',
-      width: '640',
+      height: '195',
+      width: '320',
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
-        autoplay: 1
+        autoplay: 0
       }
     };
 
-    return (
-      <YouTube videoId="2g811Eo7K8U" opts={opts} onReady={this._onReady} />
+    const config = this.props.config;
+
+    const style = {
+      top: config.y,
+      left: config.x
+  }
+    return (<div className="postWrap" style={style}>
+      <YouTube videoId={config.content} opts={opts} onReady={this._onReady} />
+      </div>
     );
   }
 

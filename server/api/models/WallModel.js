@@ -10,7 +10,6 @@ var WallPostSchema = new Schema({
   content: {
     type: String,
     required: true
-    //type: String for links, BSON for images
   },
   x: {
     type: Number,

@@ -7,10 +7,11 @@ var ObjectId = mongoose.Types.ObjectId;
 var _ = require('lodash');
 
 exports.get_papirs = function (req, res) {
-	WallPost.find({}, function (err, papirs) {
+	// returns all documents
+	WallPost.find({}, function (err, allPosts) {
 		if (err)
 			res.send(err);
-		res.json(papirs);
+		res.json(allPosts);
 	});
 };
 
