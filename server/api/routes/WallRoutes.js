@@ -1,6 +1,9 @@
 'use strict';
 module.exports = function (app) {
 	var wall = require('../controllers/WallController');
+	var cors = require('cors');
+	
+	app.options('*', cors());
 	
 	app.route('/papirs')
 		.get(wall.get_papirs)
