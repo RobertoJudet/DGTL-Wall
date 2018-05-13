@@ -30,8 +30,8 @@ function computeMiddleOfCanvas(settings) {
 }
 
 const settings = {
-    canvasWidth: 2100,
-    canvasHeight: 2000
+    canvasWidth: 10000,
+    canvasHeight: 10000
 }
 
 HttpService.get().then(
